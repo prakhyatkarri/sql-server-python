@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+    db:
+        image: mcr.microsoft.com/mssql/server:2019-latest 
+        restart: always
+        environment:
+          - MSSQL_PID=Express
+          - MSSQL_SA_PASSWORD=P@ssw0rd!
+          - ACCEPT_EULA=Y
+          # userid=sa
+        ports:
+          - 1433:1433
+        # volumes:
+          # - setup:/opt/mssql-tools/bin/
+
+# volumes:
+  # setup: {}
